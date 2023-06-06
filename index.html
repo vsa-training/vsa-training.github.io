@@ -1,128 +1,159 @@
 <!doctype html>
 <html lang="en">
 <HEAD>
+  <TITLE>VSA Demo Site</TITLE>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-<TITLE>VSA Demo Site</TITLE>
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
 
-  ttq.load('CHDBRTRC77U4GTLSN0TG');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    ttq.load('CHDBRTRC77U4GTLSN0TG');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
 
 </HEAD>
 
 <BODY BGCOLOR="FFFFFF">
 
-<HR>
 
-<H1> This VSA Demo Testing Page</H1>
-<H2>Below is a inputbox for email</H2>
-<input id="emailInput" type="text" value="Enter your email here" />
-<input id="phoneInput" type="text" value="Enter your phone number here" />
+<H1 class="text-center">VSA Demo Page</H1>
 
+<hr>
+
+<div class="container">
+  <h5>Please input your email and phone number for Advanced Matching</h5>
+  <div class="mb-3">
+    <label class="form-label">Email address</label>
+    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Phone Number</label>
+    <input type="text" class="form-control" id="phoneInput" placeholder="+11234567890">
+  </div>
   
+</div>
+
+<hr>
+
+<div class="container text-center">
   <div class="row">
-    <div class="col-sm-4"> 
+    <div class="col">
       <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="images/white_tshirt.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Product 1</h5>
-          <p class="card-text">Product 1 details.</p>
-          <button id="vcP1" class="vcButton btn btn-primary" type="button" onclick="viewContent('p1', 'product', 1, 10, 10, 'USD')">View Content</button>
-          <button id="atcP1" class="atcButton">Add To Cart</button>
-        <button id="icP1" class="icButton">Initiate Checkout</button>
-        <button id="cpP1" class="cpButton">Complete Payment</button>
+          <p class="card-text">Product 1 is implemented correctly.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Content ID: p1</li>
+          <li class="list-group-item">Content Type: Product</li>
+          <li class="list-group-item">Price: 10</li>
+        </ul>
+        <div class="card-body">
+          <div class="d-grid gap-2 col-5 mx-auto">
+            <button id="vcP1"  type="button" class="vcButton btn btn-sm btn-outline-primary" onclick="viewContent('p1', 'product', 1, 10, 10, 'USD')">View Content</button>
+            <button id="atcP1" type="button" class="atcButton btn btn-sm btn-outline-primary" onclick="addToCart('p1', 'product', 1, 10, 10, 'USD')"> Add To Cart</button>
+            <button id="cpP1" type="button" class="cpButton btn btn-sm btn-outline-primary" onclick="completePayment('p1', 'product', 1, 10, 10, 'USD')">Complete Payment</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col"> 
       <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="images/yellow_tshirt.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Product 2</h5>
-          <p class="card-text">Product 2 details.</p>
-          <button id="vcP2" class="vcButton btn btn-primary" type="button" onclick="viewContent('p2', 'product', 1, 10, 10, 'USD')">View Content</button>
-          <button id="atcP2" class="atcButton">Add To Cart</button>
-        <button id="icP2" class="icButton">Initiate Checkout</button>
-        <button id="cpP2" class="cpButton">Complete Payment</button>
+          <p class="card-text">Product 2 has an issue.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Content ID: p2</li>
+          <li class="list-group-item">Content Type: Product Group</li>
+          <li class="list-group-item">Price: 15</li>
+        </ul>
+        <div class="card-body">
+          <div class="d-grid gap-2 col-5 mx-auto">
+            <button id="vcP1"  type="button" class="vcButton btn btn-sm btn-outline-primary" onclick="viewContent('p1', 'product', 1, 15, 15, 'USD')">View Content</button>
+            <button id="atcP1" type="button" class="atcButton btn btn-sm btn-outline-primary" onclick="addToCart('p2', 'product', 1, 15, 15, 'USD')"> Add To Cart</button>
+            <button id="cpP1" type="button" class="cpButton btn btn-sm btn-outline-primary" onclick="completePayment('p3', 'product', 1, 15, 15, 'USD')">Complete Payment</button>
+          </div>
+        </div>
       </div>
     </div>
-   </div>
+    <div class="col"> 
+      <div class="card" style="width: 18rem;">
+        <img src="images/blue_tshirt.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Product 3</h5>
+          <p class="card-text">Product 3 has an issue.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Content ID: p3</li>
+          <li class="list-group-item">Content Type: Product</li>
+          <li class="list-group-item">Price: 20</li>
+        </ul>
+        <div class="card-body">
+          <div class="d-grid gap-2 col-5 mx-auto">
+            <button id="vcP1"  type="button" class="vcButton btn btn-sm btn-outline-primary" onclick="viewContent('p1', 'product', 1, 20, 20, 'USD')">View Content</button>
+            <button id="atcP1" type="button" class="atcButton btn btn-sm btn-outline-primary" onclick="addToCart('p3', 'product', 1, 20, 20, 'USD')"> Add To Cart</button>
+            <button id="cpP1" type="button" class="cpButton btn btn-sm btn-outline-primary" onclick="completePayment('p3', 'product', 1, 20, 20, 'USD')">Complete Payment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   
   
-   <H2> Product 3 </H2>
-  <button id="vcP3" class="vcButton">View Content</button>
-  <button id="atcP3" class="atcButton">Add To Cart</button>
-  <button id="icP3" class="icButton">Initiate Checkout</button>
-  <button id="cpP3" class="cpButton">Complete Payment</button>
-
-  
-   <H2> Product 4 </H2>
-  <button id="vcP4" class="vcButton">View Content</button>
-  <button id="atcP4" class="atcButton">Add To Cart</button>
-  <button id="icP4" class="icButton">Initiate Checkout</button>
-  <button id="cpP4" class="cpButton">Complete Payment</button>
-
 <script>
                                     
    function viewContent(content_id, content_type, quantity, price, value, currency) {
      ttq.identify({
-    email: document.getElementById("emailInput").value,
-  })
-    ttq.track('ViewContent',{  
-    content_id: content_id,
-    content_type: content_type,
-    quantity: quantity,
-    price: price,
-    value: value,
-    currency: currency})
-}                                 
+      email: document.getElementById("emailInput").value,
+      })
+      ttq.track('ViewContent',{  
+      content_id: content_id,
+      content_type: content_type,
+      quantity: quantity,
+      price: price,
+      value: value,
+      currency: currency})
+  }  
   
-document.getElementById("atcButton").onclick = function(){
-  ttq.identify({
-  email: document.getElementById("emailInput").value,
-})
-  ttq.track('AddToCart',{  
-  content_id: '301',
-  content_type:'product',
-  quantity: 1,
-  price: 8,
-  value: 9.2,
-  currency: 'USD',})
-}
-  
-document.getElementById("icButton").onclick = function(){
-  ttq.identify({
-  email: document.getElementById("emailInput").value,
-})
-  ttq.track('InitiateCheckout',{  
-  content_id: '301',
-  content_type:'product',
-  quantity: 1,
-  price: 8,
-  value: 9.2,
-  currency: 'USD',})
-}
-document.getElementById("cpButton").onclick = function(){
-    ttq.identify({
-    email: document.getElementById("emailInput").value,
-})
-    ttq.track('CompletePayment',{  
-    content_id: '301',
-    quantity: 1,
-    price: 8,
-    value: 9.2,
-    currency: 'USD',})
- }
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  function addToCart(content_id, content_type, quantity, price, value, currency) {
+     ttq.identify({
+      email: document.getElementById("emailInput").value,
+      })
+      ttq.track('AddToCart',{  
+      content_id: content_id,
+      content_type: content_type,
+      quantity: quantity,
+      price: price,
+      value: value,
+      currency: currency})
+  }  
+
+  function completePayment(content_id, content_type, quantity, price, value, currency) {
+     ttq.identify({
+      email: document.getElementById("emailInput").value,
+      })
+      ttq.track('CompletePayment',{  
+      content_id: content_id,
+      content_type: content_type,
+      quantity: quantity,
+      price: price,
+      value: value,
+      currency: currency})
+  }  
 
 </script>
 
 
 <HR>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </BODY>
 
