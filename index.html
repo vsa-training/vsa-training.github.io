@@ -158,6 +158,7 @@
   function viewContent(content_id, content_type, quantity, price, value, currency) {
      ttq.identify({
       email: document.getElementById("emailInput").value,
+       phone: document.getElementById("phoneInput").value
       })
      
       ttq.track('ViewContent',{  
@@ -172,6 +173,7 @@
    function contentsArray(eventType, content_id, content_type, quantity, price, value, currency) {
      ttq.identify({
       email: document.getElementById("emailInput").value,
+       phone: document.getElementById("phoneInput").value
       })
 
       ttq.track(eventType,{  
@@ -187,6 +189,7 @@
   function addToCart(content_id, content_type, quantity, price, value, currency) {
      ttq.identify({
       email: document.getElementById("emailInput").value,
+       phone: document.getElementById("phoneInput").value
       })
       ttq.track('AddToCart',{  
       content_id: content_id,
@@ -200,6 +203,7 @@
   function completePayment(content_id, content_type, quantity, price, value, currency) {
      ttq.identify({
       email: document.getElementById("emailInput").value,
+       phone: document.getElementById("phoneInput").value
       })
       ttq.track('CompletePayment',{  
       content_id: content_id,
