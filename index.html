@@ -114,13 +114,31 @@
      ttq.identify({
       email: document.getElementById("emailInput").value,
       })
+     
+     
       ttq.track('ViewContent',{  
+        content_type: "product_group",
+        contents: [
+  {
       content_id: content_id,
       content_type: content_type,
       quantity: quantity,
       price: price,
       value: value,
-      currency: currency})
+      currency: currency
+  },
+ {
+      content_id: content_id,
+      content_type: content_type,
+      quantity: quantity,
+      price: price,
+      value: value,
+      currency: currency
+  }],
+  value: 14.2,
+  currency: 'USD'
+      
+      })
   }  
   
   function addToCart(content_id, content_type, quantity, price, value, currency) {
